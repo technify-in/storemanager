@@ -1,0 +1,86 @@
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+
+body {
+    font-family: roboto;
+}
+
+a{
+text-decoration: none;
+color:black;
+}
+
+
+.lft{
+  float:left;
+  width:100px;
+}
+.rgt{
+}
+
+select {
+		border:0px solid lightgrey;  /*Removes border*/
+		-webkit-appearance: none;  /*Removes default chrome and safari style*/
+		-moz-appearance: none; /* Removes Default Firefox style*/
+		background: white url(images/select-arrow.png) no-repeat 90% center;
+		width: 100px; /*Width of select dropdown to give space for arrow image*/
+		text-indent: 0.01px; /* Removes default arrow from firefox*/
+		text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
+		color: black;
+		border-radius: 0px;
+		padding: 5px;
+		
+		 border:1px solid lightgrey;
+		  padding:3px;
+		
+	}
+	.demo select.balck {
+		background-color: #000;
+	}
+	.demo select.option3 {
+		border-radius: 10px 0;
+	}
+	
+	
+	
+	
+	
+.main_box{
+  width:600px;
+  padding: 30px;
+  padding-top:50px;
+  margin:auto;
+  background:#f0f0f0;;
+}
+
+.small_box{
+  background:white;
+  padding:20px;
+  margin:30px;
+  padding-left:50px;
+
+}
+
+input[type="text"]{
+  border:1px solid lightgrey;
+  padding:3px;
+}
+
+input[type="submit"]{
+  border:1px solid lightgrey;
+  padding:3px;
+  font-size:20px;
+  padding:10px;
+  color:black;
+  background:white
+}
+
+
+input[type="text"]:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-color: lightgrey;
+  outline-style: none;
+  outline-width: 5px;
+}

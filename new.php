@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
 <?php
 date_default_timezone_set('Asia/Kolkata');
 session_start();
@@ -21,19 +24,9 @@ echo "<a href='logout.php'>Logout</a></p>";
 ?>
 
 
-<!--///////////////////////////style/////////////////////////////////// -->
-<style>
-.lft{
-  float:left;
-  width:100px;
-}
-.rgt{
-}
-</style>
-
-<!--///////////////////////////page/////////////////////////////////// -->
 
 <div class="main_box">
+<a class="list-group-item" href="dashboard.php"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
       <form action="add.php" method="GET">
         <center><h2>product</h2></center>
 
@@ -54,17 +47,15 @@ echo "<a href='logout.php'>Logout</a></p>";
               <div class="rgt"><input name="mrp" type='text' class="mrp"></div><br>
               <div class="lft">quantity</div>
               <div class="rgt"><input name="qty" type='text' class="qty"></div><br>
+              <div class="lft">type</div>
+              <div class="rgt">  <select name="type" class="pr_type">
+		<option value="A">A</option>
+		<option value="B">B</option>
+		<option value="C">C</option>
+	</select>
+              
+              </div><br>
             </div>
-
-          <div class="small_box">
-          <h3>VAT INVOICE</h3>
-            <div class="lft">tax_ivoice no</div>
-            <div class="rgt"><input name="tiv" type='text'  class="tiv"></div><br>
-            <div class="lft">date</div>
-            <div class="rgt"><input name="dat" type='text'  class="dat" ></div><br>
-            <div class="lft">seller</div>
-            <div class="rgt"><input name="seller" type='text'  class="seller" ></div><br>
-          </div>
 
           <center><input type="submit"></center>
       </form>
@@ -72,7 +63,6 @@ echo "<a href='logout.php'>Logout</a></p>";
 
 
 <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
-<link rel="stylesheet" href="css/new.css" type="text/css" />
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script>
 <script type="text/javascript">
@@ -112,41 +102,6 @@ $(function() {
         		source: "search/imei.php",
         		minLength: 1
         	});
-
-
-          $(".tiv").change(
-
-            function(){
-
-              var xmlhttp;
-            if (window.XMLHttpRequest)
-              {// code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp=new XMLHttpRequest();
-              }
-            else
-              {// code for IE6, IE5
-              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-              }
-            xmlhttp.onreadystatechange=function()
-              {
-              if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                  var res=JSON.parse(xmlhttp.responseText);
-
-                $(".dat").val(res[0][0]);
-                $(".seller").val(res[0][1]);
-                }
-              }
-            xmlhttp.open("POST","search/tiv.php?term="+$(".tiv").val(),true);
-            xmlhttp.send();
-
-
-            }
-
-
-
-          );
-
 
 
 
