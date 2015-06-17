@@ -4,6 +4,7 @@
 <script type="text/javascript" src="js/jtot/jquery.dynatable.js"></script>
 <script type="text/javascript" src="js/jquery.jsontotable.min.js"></script>
 <script type="text/javascript" src="js/jquery.sieve.min.js"></script>
+<script type="text/javascript" src="js/jquery.quick.pagination.min.js"></script>
 
 
 <?php
@@ -37,19 +38,22 @@ echo date_format($date, 'd/m/Y H:i:s');
 
 echo"</p>";
  ?>
+</center>
 
-
-<div class="clear">
+<div class="add_pro">
 	<a href="new.php"></a>
 	<a class="list-group-item" href="new.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Add Product</a>
 
 </div>
-</center>
 
-<h2>Products</h2>
+
+
 
 
 <div id="data-table-outer" class="jsontotable">
+
+<h2 style="font-weight:normal;margin-left:100px;">Products | Distributors</h2>
+
 <div id="data-table" class="jsontotable">
   
 </div>
@@ -86,7 +90,7 @@ $(function(){
                   $('table').sieve();
 		$('#data-table').width($('table').width())
 		$($('#data-table').children()[0]).addClass("searchbar");
-		
+		$($('#data-table').children()[0]).append($(".add_pro"))
 		
                 }
               }

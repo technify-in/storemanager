@@ -101,6 +101,12 @@ input[type="text"]:focus {
   padding: 20px;
   border: 1px solid #ccc; 
 }
+
+
+
+
+
+
 [type=radio]:checked ~ label {
   background: white;
  
@@ -171,4 +177,10 @@ margin:auto
 padding:10px;
 }
 
+
+.add_pro{
+
+float:right;
+margin-left:10px;
+}
 
