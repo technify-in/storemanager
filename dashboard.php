@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jtot/jquery.dynatable.js"></script>
+<script type="text/javascript" src="js/jquery.jsontotable.min.js"></script>
+<script type="text/javascript" src="js/jquery.sieve.min.js"></script>
 
 
 <?php
@@ -37,21 +39,21 @@ echo"</p>";
  ?>
 
 
+<div class="clear">
+	<a href="new.php"></a>
+	<a class="list-group-item" href="new.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Add Product</a>
 
-<a href="new.php"></a>
-<a class="list-group-item" href="new.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Add Product</a>
+</div>
 </center>
 
+<h2>Products</h2>
 
 
-<table id="my-ajax-table">
-  <thead>
-    <th>Some Attribute</th>
-    <th>Some Other Attribute</th>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+<div id="data-table-outer" class="jsontotable">
+<div id="data-table" class="jsontotable">
+  
+</div>
+</div>
 
 
 <!--  script -----------------                 -->
@@ -64,22 +66,38 @@ echo"</p>";
 
 
 $(function(){
-   
-$('#my-ajax-table').dynatable({
-  dataset: {
-    ajax: true,
-    ajaxUrl: 'http://www.dynatable.com/dynatable-ajax.json',
-    ajaxOnLoad: true,
-    records: []
-  }
-});
+              var xmlhttp;
+              var res;
+            if (window.XMLHttpRequest)
+              {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+              }
+            else
+              {// code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              }
+            xmlhttp.onreadystatechange=function()
+              {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                  var res = JSON.parse(xmlhttp.responseText);
+                  var input = JSON.stringify(res);
+                  $.jsontotable(input, { id: "#data-table", header: true });
+                  $('table').sieve();
+		$('#data-table').width($('table').width())
+		$($('#data-table').children()[0]).addClass("searchbar");
+		
+		
+                }
+              }
 
 
-   
-   
-   }
+            xmlhttp.open("POST","search/products.php" ,true);
+            xmlhttp.send();
+
+            }
 
           );
-          
+
          
 </script>
