@@ -11,11 +11,11 @@ if (isset($_GET['term'])){
 	    $conn = new PDO("mysql:host=".DB_SERVER.";port=8889;dbname=".DB_NAME, DB_USER, DB_PASSWORD);
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	    $stmt = $conn->prepare('SELECT distinct name FROM products WHERE name LIKE :term');
+	    $stmt = $conn->prepare('SELECT distinct type FROM stockitemtypes WHERE type LIKE :term');
 	    $stmt->execute(array('term' => '%'.$_GET['term'].'%'));
 
 	    while($row = $stmt->fetch()) {
-	        $return_arr[] =  $row['name'];
+	        $return_arr[] =  $row['type'];
 	    }
 
 	} catch(PDOException $e) {

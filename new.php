@@ -32,27 +32,49 @@ echo "<a href='logout.php'>Logout</a></p>";
 
         <div class="small_box">
               <div class="lft" >product name</div>
-            <div class="rgt"><input name="name" type='text' class="name" ></div><br>
+            <div class="rgt"><input name="name" type='text' class="name" required></div><br>
             <div class="lft" >sku</div>
-            <div class="rgt"><input name="sku" type='text' class="sku" ></div><br>
+            <div class="rgt"><input name="sku" type='text' class="sku" required></div><br>
               <div class="lft">imei</div>
-              <div class="rgt" > <input name="imei" type='text' class="imei"></div><br>
+              <div class="rgt" > <input name="imei" type='text' class="imei" ></div><br>
               <div class="lft">s no</div>
-              <div class="rgt"><input name="sno" type='text' class="sno" ></div><br>
+              <div class="rgt"><input name="sno" type='text' class="sno" required></div><br>
               <div class="lft">dp</div>
-              <div class="rgt"><input name="dp" type='text' class="dp" ></div><br>
+              <div class="rgt"><input name="dp" type='text' class="dp" required></div><br>
               <div class="lft">vat</div>
-              <div class="rgt"><input name="vat" type='text' class="vat"></div><br>
+              <div class="rgt"><input name="vat" type='text' class="vat" ></div><br>
               <div class="lft">price</div>
-              <div class="rgt"><input name="mrp" type='text' class="mrp"></div><br>
+              <div class="rgt"><input name="mrp" type='text' class="mrp" required></div><br>
               <div class="lft">quantity</div>
               <div class="rgt"><input name="qty" type='text' class="qty"></div><br>
               <div class="lft">type</div>
-              <div class="rgt">  <select name="type" class="pr_type">
-		<option value="A">A</option>
-		<option value="B">B</option>
-		<option value="C">C</option>
-	</select>
+              <div class="rgt"> 
+              
+              <div class="tabs">
+   <div class="tab">
+       <input type="radio" id="tab-1" name="type" checked>
+       <label for="tab-1">A</label>
+       
+   </div>
+    
+   <div class="tab">
+       <input type="radio" id="tab-2" name="type">
+       <label for="tab-2">B</label>
+       
+   </div>
+    
+    <div class="tab">
+       <input type="radio" id="tab-3" name="type">
+       <label for="tab-3">C</label>
+   
+   </div>
+    
+</div>
+
+
+              
+              
+              
               
               </div><br>
             </div>
@@ -74,10 +96,7 @@ $(function() {
 		minLength: 1
 	});
 
-  $(".sku").autocomplete({
-		source: "search/sku.php",
-		minLength: 1
-	});
+ 
 
   $(".sno").autocomplete({
 		source: "search/sno.php",
@@ -104,8 +123,50 @@ $(function() {
         	});
 
 
+$(".name").focusout(
+
+            function(){
+
+              var xmlhttp;
+            if (window.XMLHttpRequest)
+              {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+              }
+            else
+              {// code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+              }
+            xmlhttp.onreadystatechange=function()
+              {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                  var res=JSON.parse(xmlhttp.responseText);
+		
+			if((res[0][0] !="") && ( res[0][0] != null) ){
+		        $(".sku").val(res[0][0])
+		        $(".sku").prop('readonly', true);
+		        $(".sku").attr('style', "color:lightgrey");
+		        
+		       }
+		       else{
+		       	 $(".sku").prop('readonly', false);
+		        $(".sku").attr('style', "color:black");
+		       
+		       }
+		}
+              }
+            xmlhttp.open("POST","search/sku.php?term="+$(".name").val(),true);
+            xmlhttp.send();
 
 
+            }
+
+
+
+          );
+          
+          
+          
 
 });
 

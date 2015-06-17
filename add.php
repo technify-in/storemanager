@@ -13,18 +13,18 @@ if( (isset($_REQUEST['sku']) && isset($_REQUEST['imei']) && isset($_REQUEST['sno
     $result = mysql_query($qry) or die(mysql_error());
 
 	if($result){
-	      header('Location: dashboard.php?msg=product added');
+	      header('Location: dashboard.php?msg=<span style="color:green">product added</span>');
     	}
 
 	else{
-  		header('Location: dashboard.php?msg=error adding product');
+  		header('Location: dashboard.php?msg=<span style="color:red">error adding product</span>');
 	}
 
 
   }
 
 else{
-  header('Location: dashboard.php?msg=error adding product');
+  header('Location: dashboard.php?msg=<span style="color:red">error adding product</span>');
 }
 
 

@@ -1,5 +1,8 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jtot/jquery.dynatable.js"></script>
+
 
 <?php
 date_default_timezone_set('Asia/Kolkata');
@@ -38,3 +41,45 @@ echo"</p>";
 <a href="new.php"></a>
 <a class="list-group-item" href="new.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Add Product</a>
 </center>
+
+
+
+<table id="my-ajax-table">
+  <thead>
+    <th>Some Attribute</th>
+    <th>Some Other Attribute</th>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+
+<!--  script -----------------                 -->
+
+
+
+
+
+<script>
+
+
+$(function(){
+   
+$('#my-ajax-table').dynatable({
+  dataset: {
+    ajax: true,
+    ajaxUrl: 'http://www.dynatable.com/dynatable-ajax.json',
+    ajaxOnLoad: true,
+    records: []
+  }
+});
+
+
+   
+   
+   }
+
+          );
+          
+         
+</script>
