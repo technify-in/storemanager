@@ -27,8 +27,8 @@ echo "<a href='logout.php'>Logout</a></p>";
 
 <div class="main_box">
 <a class="list-group-item" href="dashboard.php"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
-      <form action="add.php" method="GET">
-        <center><h2>product</h2></center>
+      <form action="add_product.php" method="GET">
+        <center><h2>Product</h2></center>
 
         <div class="small_box">
               <div class="lft" >product name</div>
