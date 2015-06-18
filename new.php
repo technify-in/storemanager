@@ -50,32 +50,27 @@ echo "<a href='logout.php'>Logout</a></p>";
               <div class="lft">type</div>
               <div class="rgt"> 
               
-              <div class="tabs">
-   <div class="tab">
-       <input type="radio" id="tab-1" name="type" checked>
+              <div class="tabs2">
+   <div class="tab new_tab">
+       <input type="radio" id="tab-1" name="type" value="A" checked>
        <label for="tab-1">A</label>
        
    </div>
     
-   <div class="tab">
-       <input type="radio" id="tab-2" name="type">
+   <div class="tab new_tab">
+       <input type="radio" id="tab-2" name="type"  value="B" >
        <label for="tab-2">B</label>
        
    </div>
     
-    <div class="tab">
-       <input type="radio" id="tab-3" name="type">
+    <div class="tab new_tab">
+       <input type="radio" id="tab-3" name="type"  value="C" >
        <label for="tab-3">C</label>
    
    </div>
     
 </div>
-
-
-              
-              
-              
-              
+     
               </div><br>
             </div>
 

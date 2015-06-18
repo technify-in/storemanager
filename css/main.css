@@ -1,16 +1,24 @@
+body {
+	font-family: 'roboto', Calibri, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	color: #333;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+a {
+	color: #555;
+	text-decoration: none;
+}
+
+
+
 @font-face {
     font-family: roboto;
     src: url(../fonts/Roboto/Roboto-Light.ttf);
 }
 
-body {
-    font-family: roboto;
-}
-
-a{
-text-decoration: none;
-color:black;
-}
 
 
 .lft{
@@ -28,7 +36,7 @@ color:black;
   width:600px;
   padding: 30px;
   padding-top:50px;
-  margin:auto;
+  margin: 10px auto;
   background:#f0f0f0;;
 }
 
@@ -64,57 +72,100 @@ input[type="text"]:focus {
 
 
 
-
-
-
-
-
-
-
-
-.tabs {
+/* tabs.....................................................................................................*/
+   .tabs {
+      position: relative;   
+      height: 100%;\ /* This part sucks */
+      clear: both;
+      margin: 25px 0;
+    }
+.tabs2 {
   position: relative;   
   height:0px; /* This part sucks */
   margin:0px;
 }
+
+
+
+    .tab {
+      float: left;
+    }
 .tab {
   float: left;
 }
+
+.dummy label {
+      background: #eee; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      margin-left: -1px; 
+      position: relative;
+      left: 1px; 
+    }
+.dummy{
+      font-size:19px;
+}
 .tab label {
-  background: #eee; 
   padding: 10px; 
-  border: 1px solid #ccc; 
   margin-left: -1px; 
   position: relative;
   left: 1px; 
 }
+
+
+
+    .tab [type=radio] {
+      display: none;   
+    }
 .tab [type=radio] {
   display: none;   
 }
-.content {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  background: white;
-  right: 0;
-  bottom: 0;
-  padding: 20px;
-  border: 1px solid #ccc; 
-}
 
-
-
-
+    .content {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+      border-top: 1px solid #ccc; 
+      height:100%;
+      overflow:hidden;
+    }
 
 
 [type=radio]:checked ~ label {
+      background: white;
+      border-bottom: 1px solid white;
+      z-index: 2;
+    }
+.new_tab [type=radio]:checked ~ label {
   background: white;
- 
+ z-index:0;
+   border-bottom: 1px solid #ccc;
+    
 }
+
 [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+.new_tab [type=radio]:checked ~ label ~ .content {
+      z-index: 0;
   
 }
 
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------*/
 
 .ui-autocomplete{
 max-width:300px !important; 
@@ -183,4 +234,26 @@ padding:10px;
 float:right;
 margin-left:10px;
 }
+.add_pro2{
 
+float:right;
+margin-left:10px;
+}
+
+
+
+/* menu dropdown :p/ */
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+.content_box{
+margin:90px;
+}
