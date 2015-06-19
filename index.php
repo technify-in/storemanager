@@ -1,3 +1,18 @@
+
+<?php
+session_start();
+date_default_timezone_set('Asia/Kolkata');
+
+require('connect.php');
+//3.1.4 if the user is logged in Greets the user with message
+if (isset($_SESSION['username'])){
+    header('Location: dashboard.php');
+    }
+  else{
+   
+    }
+?>
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel='stylesheet' id='fancybox-css'  href='style.css' type='text/css' media='screen' />

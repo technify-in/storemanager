@@ -28,7 +28,7 @@ echo "<a href='logout.php'>Logout</a></p>";
 
 <div class="main_box">
 <a class="list-group-item" href="dashboard.php"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
-      <form action="confirm_sale.php" method="GET">
+      <form action="bill.php" method="GET">
         <center><h2>Sales</h2></center>
 
         <div class="small_box">
@@ -67,7 +67,7 @@ echo "<a href='logout.php'>Logout</a></p>";
 		print "<input name=\"contact\" type='text' class=\"contact\" value='$_REQUEST[contact]' ><br/>";
 
 		print $_REQUEST['email'] . "<br/>";
-		print "<input name=\"email\" type='text' class=\"email\" value='$_REQUEST[email]' ><br/>";
+		print "<input name=\"email\" type='hidden' class=\"email\" value='$_REQUEST[email]' ><br/>";
 	
 	}
 
@@ -84,7 +84,7 @@ echo "<a href='logout.php'>Logout</a></p>";
 	        $array = mysql_fetch_assoc($result);
 		
 	
-		print '<br/> <u><h3 style="font-weight:normal">Customer details</h3></u> <br/>';
+		print '<br/> <u><h3 style="font-weight:normal">Product details</h3></u> <br/>';
 	
 		print "<div class=\"lft\" >Name: </div>".$array['name'] . "<br/>";
 		print "<div class=\"lft\" >SKU: </div>".$array['sku'] . "<br/>";
@@ -94,7 +94,7 @@ echo "<a href='logout.php'>Logout</a></p>";
 		print "<div class=\"lft\" >S.No: </div>".$array['sno'] . "<br/>";
 		print "<div class=\"lft\" >MRP: </div>".$array['mrp'] . "<br/>";	
 		print "<div class=\"lft\" >Tax: </div>".$array['tax'] . "<br/>";	
-		print "<input name=\"pid\" type='text' class=\"pid\" value='$array[id]' ><br/>";
+		print "<input name=\"pid\" type='hidden' class=\"pid\" value='$array[id]' ><br/>";
 	
 		
 
@@ -109,7 +109,6 @@ echo "<a href='logout.php'>Logout</a></p>";
         
         ?>
         
-      <form>  
        
              <div class="lft" > method</div>
             <div class="rgt"><input name="method" type="text" class="method" value="<?php print $_REQUEST['type'] ?>"required></div><br>
@@ -118,7 +117,7 @@ echo "<a href='logout.php'>Logout</a></p>";
   	  <div class="rgt">   <textarea name="remarks" >Enter text here...</textarea> </div><br>
 
         
-          <center><input type="submit"></center>
+          <center><input type="submit" value="Generate Bill"></center>
       </form>
 
 

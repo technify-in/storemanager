@@ -69,8 +69,8 @@ echo "<a href='logout.php'>Logout</a></p>";
    </div>
     
     <div class="tab new_tab">
-       <input type="radio" id="tab-3" name="type"  value="Cash" >
-       <label for="tab-3">Cash</label>
+       <input type="radio" id="tab-3" name="type"  value="Card" >
+       <label for="tab-3">Card</label>
    
    </div>
     

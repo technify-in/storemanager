@@ -51,7 +51,20 @@ a {
 input[type="text"]{
   border:1px solid lightgrey;
   padding:3px;
-}input[type="password"]{
+
+}
+
+
+textarea{
+  border:1px solid lightgrey;
+  padding:3px;
+
+}
+
+
+
+
+input[type="password"]{
   border:1px solid lightgrey;
   padding:3px;
 }
