@@ -55,7 +55,7 @@ echo"</p>";
 		<div class="tab"><input type="radio" id="tab-1" name="tab-group-1"checked>
 	 		<label style="margin-left:20px;" class="dummy" for="tab-1">Products</label>
 				<div class="content">
-					<div class="add_pro"> <a class="list-group-item" href="new.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Add Product</a>
+					<div class="add_pro"> <a class="list-group-item" href="new_product.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Add Product</a>
 					</div>
 					<div id="data-table-outer" class="jsontotable">
 						<div id="data-table" class="jsontotable"></div>
