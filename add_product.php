@@ -1,7 +1,6 @@
 <?php
 require('connect.php');
 
-print_r($_REQUEST);
 
 
 if( (isset($_REQUEST['sku']) && isset($_REQUEST['imei']) && isset($_REQUEST['sno'])) &&  (isset($_REQUEST['name']) && isset($_REQUEST['vat']) && isset($_REQUEST['dp'])) && (isset($_REQUEST['mrp']) )){

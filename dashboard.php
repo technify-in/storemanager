@@ -1,19 +1,8 @@
-<html>
-<head>
-<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jtot/jquery.dynatable.js"></script>
-<script type="text/javascript" src="js/jquery.jsontotable.min.js"></script>
-<script type="text/javascript" src="js/jquery.sieve.min.js"></script>
-<script type="text/javascript" src="js/jquery.quick.pagination.min.js"></script>
 
 <?php
-date_default_timezone_set('Asia/Kolkata');
 session_start();
+date_default_timezone_set('Asia/Kolkata');
+
 require('connect.php');
 //3.1.4 if the user is logged in Greets the user with message
 if (isset($_SESSION['username'])){
@@ -39,6 +28,23 @@ echo date_format($date, 'd/m/Y H:i:s');
 
 echo"</p>";
 ?>
+
+<html>
+<head>
+<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jtot/jquery.dynatable.js"></script>
+<script type="text/javascript" src="js/jquery.jsontotable.min.js"></script>
+<script type="text/javascript" src="js/jquery.sieve.min.js"></script>
+<script type="text/javascript" src="js/jquery.quick.pagination.min.js"></script>
+
+
+
+
 
 </center>
 <title></title>

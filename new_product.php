@@ -1,9 +1,8 @@
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
 
 <?php
-date_default_timezone_set('Asia/Kolkata');
 session_start();
+date_default_timezone_set('Asia/Kolkata');
+
 require('connect.php');
 //3.1.4 if the user is logged in Greets the user with message
 if (isset($_SESSION['username'])){
@@ -24,6 +23,8 @@ echo "<a href='logout.php'>Logout</a></p>";
 ?>
 
 
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 
 <div class="main_box">
 <a class="list-group-item" href="dashboard.php"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>

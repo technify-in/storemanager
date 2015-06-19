@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel='stylesheet' id='fancybox-css'  href='style.css' type='text/css' media='screen' />
 <?php
 if (isset($_REQUEST['msg']) ){
@@ -7,13 +9,33 @@ echo $msg;
 
 }
 ?>
-<h1>Login</h1>
-<form action="login.php" method="POST">
-<p><label>User Name : </label>
-<input id="username" type="text" name="username" placeholder="username" /></p>
-<p><label>Password&nbsp;&nbsp; : </label>
-<input id="password" type="password" name="password" placeholder="password" /></p>
 
-<input class="btn register" type="submit" name="submit" value="Login" />
-</form>
+
+
+
+<div class="main_box" style="margin-top:100px" >
+        <center><h2>iStore</h2></center>
+
+        <div class="small_box" >
+        
+
+<form action="login.php" method="POST">
+<div class="lft" >User Name : </div>
+<div class="rgt"><input id="username" type="text" name="username" placeholder="username" /></div><br>
+<div class="lft" >Password&nbsp;&nbsp; : </div>
+<div class="rgt"><input id="password" type="password" name="password" placeholder="password" /></div><br>
+
+
+</div>        
+             
+
+          <center><input type="submit" name="submit" value="Login" ></center>
+          
+
+      </form>
 </div>
+
+
+
+
+
