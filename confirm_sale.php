@@ -52,7 +52,7 @@ echo "<a href='logout.php'>Logout</a></p>";
 		print "<div class=\"lft\" >Mobile: </div>".$array['mobile'] . "<br/>";
 		
 		print "<div class=\"lft\" >Email: </div>".$array['email'] . "<br/><br/>";
-		print "<input name=\"id\" type='text' class=\"id\" value='$array[id]' ><br/>";
+		print "<input name=\"id\" type='hidden' class=\"id\" value='$array[id]' ><br/>";
 
 			}
 		
@@ -111,7 +111,7 @@ echo "<a href='logout.php'>Logout</a></p>";
         
        
              <div class="lft" > method</div>
-            <div class="rgt"><input name="method" type="text" class="method" value="<?php print $_REQUEST['type'] ?>"required></div><br>
+            <div class="rgt"><input name="method" type="text" class="method" value="<?php print $_REQUEST['type'] ?>" required></div><br>
         
       <div class="lft" > remarks</div>
   	  <div class="rgt">   <textarea name="remarks" >Enter text here...</textarea> </div><br>

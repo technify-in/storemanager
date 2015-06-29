@@ -172,8 +172,7 @@ input[type="password"]:focus {
       padding: 20px;
       border-top: 1px solid #ccc; 
       height:100%;
-      overflow:scroll;
-      
+      overflow:hidden;
     }
 
 

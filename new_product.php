@@ -34,12 +34,21 @@ echo "<a href='logout.php'>Logout</a></p>";
         <div class="small_box">
               <div class="lft" >product name</div>
             <div class="rgt"><input name="name" type='text' class="name" required></div><br>
+          <div id="sku">
             <div class="lft" >sku</div>
-            <div class="rgt"><input name="sku" type='text' class="sku" required></div><br>
+            <div class="rgt"><input name="sku" type='text' class="sku" required> <div class="add_css"> + </div></div> <br>
+          </div>
+       
+          <div id="imei">
+          
               <div class="lft">imei</div>
-              <div class="rgt" > <input name="imei" type='text' class="imei" ></div><br>
+              <div class="rgt" > <input name="imei" type='text' class="imei" ><div class="add_imei"> + </div></div><br>
+</div>
+   <div id="sno">
+       
               <div class="lft">s no</div>
-              <div class="rgt"><input name="sno" type='text' class="sno" required></div><br>
+              <div class="rgt"><input name="sno" type='text' class="sno" required><div class="add_sno"> + </div></div><br>
+   </div> 
               <div class="lft">dp</div>
               <div class="rgt"><input name="dp" type='text' class="dp" required></div><br>
               <div class="lft">vat</div>
@@ -119,6 +128,73 @@ $(function() {
         	});
 
 
+$('.add_css ').click( function(){
+	w=$('<input/>',{ type:"text",
+			class:"sku",
+			value:$($('.sku')[0]).val()	});
+	x=$('<div>',{
+	class:"rgt"});
+	x.append(w);
+xx=$('<div>',{
+	class:"add_css sub_css"})
+	.html(" ");
+	x.append(xx);
+	y=$('<div>',{
+	class:"lft"})
+	.html("sku");
+	w.val($($('.sku')[0]).val());
+	$('#sku').append(y);
+	$('#sku').append(x);
+	$('#sku').append("<br/>");});
+
+
+
+$('.add_imei').click( function(){
+	w=$('<input/>',{ type:"text",
+			class:"imei",
+			value:$($('.imei')[0]).val()	});
+	x=$('<div>',{
+	class:"rgt"});
+	x.append(w);
+xx=$('<div>',{
+	class:"add_imei sub_css"})
+	.html(" ");
+	x.append(xx);
+	y=$('<div>',{
+	class:"lft"})
+	.html("imei");
+	w.val($($('.imei')[0]).val());
+	$('#imei').append(y);
+	$('#imei').append(x);
+	$('#imei').append("<br/>");});
+
+
+
+$('.add_sno ').click( function(){
+	w=$('<input/>',{ type:"text",
+			class:"sno",
+			value:$($('.sno')[0]).val()	});
+	x=$('<div>',{
+	class:"rgt"});
+	x.append(w);
+xx=$('<div>',{
+	class:"add_sno sub_css"})
+	.html(" ");
+	x.append(xx);
+	y=$('<div>',{
+	class:"lft"})
+	.html("sno");
+	w.val($($('.sno')[0]).val());
+	$('#sno').append(y);
+	$('#sno').append(x);
+	$('#sno').append("<br/>");});
+
+
+
+
+
+
+
 $(".name").focusout(
 
             function(){
@@ -147,6 +223,9 @@ $(".name").focusout(
 		       else{
 		       	 $(".sku").prop('readonly', false);
 		        $(".sku").attr('style', "color:black");
+		       
+		       
+		       
 		       
 		       }
 		}
