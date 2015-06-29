@@ -92,8 +92,23 @@ echo "<a href='logout.php'>Logout</a></p>";
 		print "<div class=\"lft\" >IMEI: </div>".$array['imei'] . "<br/>";
 		
 		print "<div class=\"lft\" >S.No: </div>".$array['sno'] . "<br/>";
-		print "<div class=\"lft\" >MRP: </div>".$array['mrp'] . "<br/>";	
-		print "<div class=\"lft\" >Tax: </div>".$array['tax'] . "<br/>";	
+		print "<div class=\"lft\" >MRP: </div> ₹".$array['dp'] . "<br/>";
+		
+		
+		if( isset ( $array['tax'])){
+		if( is_numeric ( $array['tax'])){
+			$tax=$array['tax'];
+		}
+		else{
+		$tax=0;
+		}
+		}
+		else{
+		$tax=0;
+		}
+		
+			
+		print "<div class=\"lft\" >Tax: </div>".$tax . "%<br/>";	
 		print "<input name=\"pid\" type='hidden' class=\"pid\" value='$array[id]' ><br/>";
 	
 		

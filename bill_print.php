@@ -26,9 +26,9 @@ if (isset($_SESSION['username'])){
  	<h3 style="font-weight:normal">Purple Scratch iStore</h3>
 	SCO 90, New Leela BhaWan<br/>
 	opp dominos, Patiala, 147001<br/>
- 	<br/><br/>
+ 	<br/>
  	info@applify.in<br/>
-	info@applify.in<br/><br/>
+	applify.in<br/><br/>
  	 	
  	<hr style="border-bottom:none"/><br/>
      
@@ -59,6 +59,7 @@ if (isset($_SESSION['username'])){
 	
 	        $array5 = mysql_fetch_assoc($result5);
 		
+		$d .=  "<span style='font-size:18px'>".$array5['name'] . "</span><br/>";
 		
 		$d .= $array5['mobile'] . "<br/>";
 		
@@ -76,11 +77,18 @@ if (isset($_SESSION['username'])){
 		$d .= "<div class=\"lft\" >SKU: </div><div class='rgtt' >$array6[sku] </div><br/>";
 		$d .= "<div class=\"lft\" >IMEI: </div><div class='rgtt' >$array6[imei]</div> <br/>";		
 		$d .= "<div class=\"lft\" >S.No: </div><div class='rgtt' >$array6[sno]</div> <br/>";
-		$d .= "<div style='float:right'> ₹$array6[mrp]</div><br/>";	
-		$d .= "<div style='float:right'><div class=\"lft\" >Tax:($array6[tax]%) </div>₹".$array6['tax']*$array6['mrp']/100  . "</div><br/>";	
+		$d .= "<div style='float:right'> ₹$array6[dp]</div><br/>";	
+		$d .= "<div><div class=\"lftt\" >Tax:($array6[tax]%) </div><div class='rgttt' >₹".  number_format( $array6['tax']*$array6['dp']/100 , 2, '.', '') . "</div><br/>";	
+
+		$d .= "<div class=\"lftt\">Srcge: </div><div class='rgttt' >₹".  number_format( 0.1 * $array6['tax']*$array6['dp']/100 , 2, '.', '') . "</div><br/></div>";	
 
 		$d .= '<br/><hr style="border-bottom:none"/><br/>';
-		$d .= "<div style='float:right'><div class=\"lft\" style='width:auto' >Grand Total:</div>₹". (($array6['tax']*$array6['mrp']/100) + $array6['mrp'])  . "</div><br/>";	
+		
+		
+		$dd= number_format( (($array6['tax']*$array6['dp']/100) + $array6['dp']) + (0.1 * $array6['tax']*$array6['dp']/100 ) , 2, '.', '') ;
+		
+		
+		$d .= "<div style='float:right'><div class=\"lft\" style='width:auto' >Grand Total:</div>₹". $dd . "</div><br/>";	
 
 
 
