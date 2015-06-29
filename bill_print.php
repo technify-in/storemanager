@@ -25,8 +25,9 @@ if (isset($_SESSION['username'])){
 	<img src="images/apple.png" alt="apple" height=100px width=100px style="padding:0px;margin:0px" ><br/><br/>
  	<h3 style="font-weight:normal">Purple Scratch iStore</h3>
 	SCO 90, New Leela BhaWan<br/>
-	opp dominos, Patiala, 147001<br/>
- 	<br/>
+	Patiala, 147001<br/>
+ 	+91 9988979979<br/>
+ 	1752225666<br/>
  	info@applify.in<br/>
 	applify.in<br/><br/>
  	 	
@@ -74,9 +75,9 @@ if (isset($_SESSION['username'])){
 		$d .= '<br/><hr style="border-bottom:none"/><br/>';
 	
 		$d .= $array6['name'] . "<br/>";
-		$d .= "<div class=\"lft\" >SKU: </div><div class='rgtt' >$array6[sku] </div><br/>";
-		$d .= "<div class=\"lft\" >IMEI: </div><div class='rgtt' >$array6[imei]</div> <br/>";		
-		$d .= "<div class=\"lft\" >S.No: </div><div class='rgtt' >$array6[sno]</div> <br/>";
+		$d .= "<div class=\"lft\" >SKU: </div><div class='rgttt' >$array6[sku] </div><br/>";
+		$d .= "<div class=\"lft\" >IMEI: </div><div class='rgttt' >$array6[imei]</div> <br/>";		
+		$d .= "<div class=\"lft\" >S.No: </div><div class='rgttt' >$array6[sno]</div> <br/>";
 		$d .= "<div style='float:right'> ₹$array6[dp]</div><br/>";	
 		$d .= "<div><div class=\"lftt\" >Tax:($array6[tax]%) </div><div class='rgttt' >₹".  number_format( $array6['tax']*$array6['dp']/100 , 2, '.', '') . "</div><br/>";	
 
