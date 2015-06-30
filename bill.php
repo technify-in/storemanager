@@ -23,6 +23,9 @@ if (isset($_SESSION['username'])){
 		$cid=$_REQUEST['id'];
 	}
 	else{
+	
+	
+	
 		$name=$_REQUEST['name'];
 		$add=$_REQUEST['address'];
 		$mobile=$_REQUEST['contact'];
@@ -49,23 +52,9 @@ if (isset($_SESSION['username'])){
   	
   	}
   	
-  	
-  		      $qry2="update products set sold='1' where id=$_REQUEST[pid];";
-
-
-    		$result2 = mysql_query($qry2) or die(mysql_error());
-		if($result2){//header('Location: dashboard.php?msg=<span style="color:green">product added</span>');
-		}
-		else{header('Location: dashboard.php?msg=<span style="color:red">error generating bill</span>');}
-		
-		
-	
-	      
-		
-		
 		 $qry="INSERT INTO `sales`".
       		" (`pid`, `cid`, `mode`, `remarks`)".
-      		" VALUES ('$_REQUEST[pid]', '$cid', '$_REQUEST[method]', '$_REQUEST[remarks]');";
+      		" VALUES ('$pid', '$cid', '$_REQUEST[method]', '$_REQUEST[remarks]');";
 
 
     		$result = mysql_query($qry) or die(mysql_error());
@@ -75,6 +64,33 @@ if (isset($_SESSION['username'])){
 		}
 		else{header('Location: dashboard.php?msg=<span style="color:red">error generating bill</span>');}
 
+
+
+  	foreach($_REQUEST[pid] as $pid)
+  	{
+  	
+  		      $qry2="update products set sold='1' where id=$pid;";
+
+
+    		$result2 = mysql_query($qry2) or die(mysql_error());
+		if($result2){//header('Location: dashboard.php?msg=<span style="color:green">product added</span>');
+		}
+		else{header('Location: dashboard.php?msg=<span style="color:red">error generating bill</span>');}
+		
+		  $qry2="update products set pid='$bid' where id=$pid;";
+
+
+    		$result2 = mysql_query($qry2) or die(mysql_error());
+		if($result2){//header('Location: dashboard.php?msg=<span style="color:green">product added</span>');
+		}
+		else{header('Location: dashboard.php?msg=<span style="color:red">error generating bill</span>');}
+		
+	}		
+	
+	      
+		
+		
+	
 
 ?>
 

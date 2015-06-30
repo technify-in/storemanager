@@ -1,3 +1,20 @@
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: mrd;
+    src: url(../fonts/mrd.ttf);
+}
+@font-face {
+    font-family: man;
+    src: url(../fonts/manifesto.ttf);
+}
+@font-face {
+    font-family: sand;
+    src: url(../fonts/sand.otf);
+}
+
 body {
 	font-family: 'roboto', Calibri, Arial, sans-serif;
 	font-weight: 300;
@@ -14,10 +31,6 @@ a {
 
 
 
-@font-face {
-    font-family: roboto;
-    src: url(../fonts/Roboto/Roboto-Light.ttf);
-}
 
 
 
@@ -32,7 +45,13 @@ a {
 
 }
 .rgt{
+
 }
+
+.add_it,.rem_it{
+  float: right;
+  margin-right: 100px;
+  }
 
 .rgttt{
 float:right;
@@ -63,7 +82,7 @@ float:right;
 .small_box2{
   background:white;
  width:280px;
-  font-family: monospace;
+  font-family: helvetica;
 padding-left:30px
 
 }

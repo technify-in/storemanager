@@ -113,7 +113,7 @@ foreach($_REQUEST['id'] as $d){
 		
 			
 		print "<div class=\"lft\" >Tax: </div>".$tax . "%<br/>";	
-		print "<input name=\"pid[]\" type='hidden' class=\"pid\" value='$array[id]' ><br/>";
+		print "<input name=\"pid\" type='hidden' class=\"pid\" value='$array[id]' ><br/>";
 	
 		
 }

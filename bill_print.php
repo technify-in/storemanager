@@ -24,12 +24,11 @@ if (isset($_SESSION['username'])){
         <div class="small_box2">
 	<img src="images/apple.png" alt="apple" height=100px width=100px style="padding:0px;margin:0px" ><br/><br/>
  	<h3 style="font-weight:normal">Purple Scratch iStore</h3>
-	SCO 90, New Leela BhaWan<br/>
+	SCO 90, New Leela Bhawan<br/>
 	Patiala, 147001<br/>
  	+91 9988979979<br/>
- 	1752225666<br/>
- 	info@applify.in<br/>
-	applify.in<br/><br/>
+ 	+91 1752225666<br/>
+ 	info@applify.in<br/><br/>
  	 	
  	<hr style="border-bottom:none"/><br/>
      
@@ -64,13 +63,15 @@ if (isset($_SESSION['username'])){
 		
 		$d .= $array5['mobile'] . "<br/>";
 		
-      $qry6="SELECT * FROM `products` where id='$array[pid]' ;";
+
+
+      $qry6="SELECT * FROM `products` where pid='$_REQUEST[id]' ;";
 		
 		
    	 	$result6 = mysql_query($qry6) or die(mysql_error());
 
-	
-	        $array6 = mysql_fetch_assoc($result6);
+	$dd=0;
+	    while(   $array6 = mysql_fetch_assoc($result6)){
 		
 		$d .= '<br/><hr style="border-bottom:none"/><br/>';
 	
@@ -83,14 +84,13 @@ if (isset($_SESSION['username'])){
 
 		$d .= "<div class=\"lftt\">Srcge: </div><div class='rgttt' >₹".  number_format( 0.1 * $array6['tax']*$array6['dp']/100 , 2, '.', '') . "</div><br/></div>";	
 
+		$dd += number_format( (($array6['tax']*$array6['dp']/100) + $array6['dp']) + (0.1 * $array6['tax']*$array6['dp']/100 ) , 2, '.', '') ;
+}
+
 		$d .= '<br/><hr style="border-bottom:none"/><br/>';
 		
 		
-		$dd= number_format( (($array6['tax']*$array6['dp']/100) + $array6['dp']) + (0.1 * $array6['tax']*$array6['dp']/100 ) , 2, '.', '') ;
-		
-		
 		$d .= "<div style='float:right'><div class=\"lft\" style='width:auto' >Grand Total:</div>₹". $dd . "</div><br/>";	
-
 
 
 print $d;

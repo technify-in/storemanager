@@ -49,9 +49,18 @@ echo "<a href='logout.php'>Logout</a></p>";
           
         <u><h3 style="font-weight:normal">Product</h3></u><br/>    
       
+      		
+      		
+      		<div class="product_div" >
+            <div class="product_pan" >
               <div class="lft">p_detail</div>
-              <div class="rgt"><input name="id" type='text' class="id" ></div><br>
-
+              <div class="rgt"><input name="id[]" type='text' class="id" > <div class="add_it" style="float:right">+</div></div><br>
+		</div>
+             </div>
+             
+             
+             
+             
              
               <div class="lft">Payment</div>          
               <div class="rgt"> 
@@ -100,95 +109,71 @@ $(function() {
 		minLength: 1
 	});
 
+function xyz(){
+$('.rem_it').click(function(){
+
+$(this).parent().parent().remove();
+
+});
+}
+
+
+$(".add_it").click(function(){
+
+$('.product_div').append(' <div class="product_pan" ><div class="lft">p_detail</div><div class="rgt"><input name="id[]" value="'+ $($('.id')[0]).val() +'" type=\'text\' class="id" > <div class="rem_it" style="float:right">-</div></div><br></div>');
+xyz();
+$($('.id')[0]).val("");
+});
+
+
  
 
 $(".contact").focusout(
 
             function(){
-
               var xmlhttp;
-            if (window.XMLHttpRequest)
-              {// code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp=new XMLHttpRequest();
-              }
-            else
-              {// code for IE6, IE5
-              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-              }
-            xmlhttp.onreadystatechange=function()
-              {
-              if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
+            if (window.XMLHttpRequest)            {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();              }
+            else             {// code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");              }
+            xmlhttp.onreadystatechange=function()            {
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)              {
                   var res=JSON.parse(xmlhttp.responseText);
 		
 			if(    (res[0]['name'] != null)  &&  (res[0]['name'] != "")  ){
 			
 			 $(".name").val(res[0]['name'])
 		        $(".name").prop('readonly', true);
-		        $(".name").attr('style', "color:lightgrey");
-		  
-		  }
-		  else{
-		  
+		        $(".name").attr('style', "color:lightgrey");		  }
+		  else{		  
 		      $(".name").prop('readonly', false);
-		        $(".name").attr('style', "color:black");
-		  
-		  
-		  }
-		  
-		       if(    (res[0]['email'] != null)  &&  (res[0]['email'] != "")  ){
-			
-			
+		        $(".name").attr('style', "color:black");}
+		         if(    (res[0]['email'] != null)  &&  (res[0]['email'] != "")  ){	
 		        $(".email").val(res[0]['email'])
 		        $(".email").prop('readonly', true);
-		        $(".email").attr('style', "color:lightgrey");
-		        }
+		        $(".email").attr('style', "color:lightgrey");        }
 
-		  else{
-		  
+		  else{  
 		      $(".email").prop('readonly', false);
-		        $(".email").attr('style', "color:black");
-		  
-		  
-		  }
-		     
-		     
-		     
+		        $(".email").attr('style', "color:black");    }  
 		       if(    (res[0]['address'] != null)  &&  (res[0]['address'] != "")  ){
-			
-		     
 		        $(".address").val(res[0]['address'])
 		        $(".address").prop('readonly', true);
-		        $(".address").attr('style', "color:lightgrey");
-		       }
+		        $(".address").attr('style', "color:lightgrey");     }
 		  else{
-		  
 		      $(".address").prop('readonly', false);
-		        $(".address").attr('style', "color:black");
-		  
-		  
-		  }
-		       
-		  
-		       
-		        
+		        $(".address").attr('style', "color:black");}    
 		     //  }
 		      /// else{
 		       //	 $(".sku").prop('readonly', false);
 		      //  $(".sku").attr('style', "color:black");
 		       
 		       //}
-		       
-		       
 		}
               }
             xmlhttp.open("POST","fetch/user_details.php?term="+$(".contact").val(),true);
             xmlhttp.send();
-
-
-            }
-
-
+    }
 
           );
           
