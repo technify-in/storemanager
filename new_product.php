@@ -53,7 +53,7 @@ echo "<a href='logout.php'>Logout</a></p>";
               <div class="rgt"><input name="dp" type='text' class="dp" required></div><br>
               <div class="lft">vat</div>
               <div class="rgt"><input name="vat" type='text' class="vat" ></div><br>
-              <div class="lft">price</div>
+              <div class="lft">dp</div>
               <div class="rgt"><input name="mrp" type='text' class="mrp" required></div><br>
               <div class="lft">quantity</div>
               <div class="rgt"><input name="qty" type='text' class="qty"></div><br>
