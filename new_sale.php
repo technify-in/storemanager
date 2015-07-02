@@ -3,7 +3,6 @@
 session_start();
 date_default_timezone_set('Asia/Kolkata');
 
-require('connect.php');
 //3.1.4 if the user is logged in Greets the user with message
 if (isset($_SESSION['username'])){
   $username = $_SESSION['username'];

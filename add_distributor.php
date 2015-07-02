@@ -1,5 +1,5 @@
 <?php
-require('connect.php');
+require('db.php');
 
 
 if( (isset($_REQUEST['name']) && isset($_REQUEST['cp']) && isset($_REQUEST['mobile'])) &&  (isset($_REQUEST['phone']) && isset($_REQUEST['tin']) && isset($_REQUEST['add'])) && (isset($_REQUEST['email']) )){
