@@ -262,6 +262,54 @@ $(".name").focusout(
             xmlhttp.send();
             }
           );
+         
+         
+ $(".dp").focusout(
+            function(){
+            
+            
+            dp=parseInt($('.dp').val());
+            tax=parseInt($('.vat').val());
+         
+            
+ 		$('.mrp').val( dp + ( tax * 0.01 * dp ) + 0.1 * ( tax * 0.01 * dp )  );
+ 
+            }
+          );
+         
+
+         
+ $(".vat").focusout(
+            function(){
+ 	      
+            
+            dp=parseInt($('.dp').val());
+            tax=parseInt($('.vat').val());
+         
+            
+ 	
+ 		$('.mrp').val( dp + ( tax * 0.01 * dp ) + 0.1 * ( tax * 0.01 * dp )  );
+ 
+            }
+          );
+         
+
+
+         
+ $(".mrp").focusout(
+            function(){
+ 	      
+            
+            mrp=parseInt($('.mrp').val());
+            tax=parseInt($('.vat').val());
+         
+            
+ 		
+ 		$('.dp').val(  ( mrp * 1000 ) / ( tax * 11  +  1000  ) ) ;
+ 
+            }
+          );
+         
           
 
 });
