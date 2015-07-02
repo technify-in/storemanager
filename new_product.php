@@ -268,11 +268,11 @@ $(".name").focusout(
             function(){
             
             
-            dp=parseInt($('.dp').val());
-            tax=parseInt($('.vat').val());
+            dp=Number($('.dp').val());
+            tax=Number($('.vat').val());
          
             
- 		$('.mrp').val( dp + ( tax * 0.01 * dp ) + 0.1 * ( tax * 0.01 * dp )  );
+ 		$('.mrp').val( (dp + ( tax * 0.01 * dp ) + 0.1 * ( tax * 0.01 * dp )).toFixed(2)   );
  
             }
           );
@@ -283,12 +283,12 @@ $(".name").focusout(
             function(){
  	      
             
-            dp=parseInt($('.dp').val());
-            tax=parseInt($('.vat').val());
+            dp=Number($('.dp').val());
+            tax=Number($('.vat').val());
          
             
  	
- 		$('.mrp').val( dp + ( tax * 0.01 * dp ) + 0.1 * ( tax * 0.01 * dp )  );
+ 		$('.mrp').val( (dp + ( tax * 0.01 * dp ) + 0.1 * ( tax * 0.01 * dp )).toFixed(2)   );
  
             }
           );
@@ -300,12 +300,12 @@ $(".name").focusout(
             function(){
  	      
             
-            mrp=parseInt($('.mrp').val());
-            tax=parseInt($('.vat').val());
+            mrp=Number($('.mrp').val());
+            tax=Number($('.vat').val());
          
             
  		
- 		$('.dp').val(  ( mrp * 1000 ) / ( tax * 11  +  1000  ) ) ;
+ 		$('.dp').val(  (( mrp * 1000 ) / ( tax * 11  +  1000  )).toFixed(2) ) ;
  
             }
           );
