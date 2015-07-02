@@ -49,7 +49,7 @@ echo "<a href='logout.php'>Logout</a></p>";
               <div class="lft">s no</div>
               <div class="rgt"><input name="sno" type='text' class="sno" required><div class="add_sno"> + </div></div><br>
    </div> 
-              <div class="lft">dp</div>
+              <div class="lft">bp</div>
               <div class="rgt"><input name="dp" type='text' class="dp" required></div><br>
               <div class="lft">vat</div>
               <div class="rgt"><input name="vat" type='text' class="vat" ></div><br>
