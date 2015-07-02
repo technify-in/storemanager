@@ -1,6 +1,6 @@
 
 <?php
-require('../connect.php');
+require('../db.php');
 
 
       $qry="select * FROM `customers` where mobile='".$_REQUEST['term']."'";

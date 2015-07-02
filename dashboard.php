@@ -2,8 +2,6 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Kolkata');
-
-require('connect.php');
 //3.1.4 if the user is logged in Greets the user with message
 if (isset($_SESSION['username'])){
   $username = $_SESSION['username'];
@@ -21,16 +19,27 @@ echo "<a href='logout.php'>Logout</a></p>";
     header('Location: index.php?msg=invalid login');
     }
 ?><?php
-echo"<center><p>";
 $date = new DateTime();
-echo date_format($date, 'd/m/Y H:i:s');
+echo "<input type='hidden' class='server_time' value='" . date_format($date, 'd/m/Y H:i:s') . "' </input>";
 
-
-echo"</p>";
 ?>
 
 <html>
 <head>
+<style type="text/css">
+
+
+h2, p {
+	margin-bottom:10px;
+}
+
+ul { margin:0 auto; padding:0px; list-style:none; text-align:center; }
+ul li { display:inline; text-align:center; }
+
+</style>
+
+
+
 <meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -46,10 +55,27 @@ echo"</p>";
 
 
 
-</center>
 <title></title>
 </head>
 <body>
+<center>
+<div class="containe">
+<div class="clock">
+<div id="Date"></div>
+
+<ul>
+	<li id="hours"> </li>
+    <li id="point">:</li>
+    <li id="min"> </li>
+    <li id="point">:</li>
+    <li id="sec"> </li>
+</ul>
+
+</div>
+</div>
+
+
+</center>
 <div class="content_box">
 	<div class="tabs">
 		<div class="tab"><input type="radio" id="tab-1" name="tab-group-1"checked>
@@ -156,7 +182,41 @@ $(function(){
 
             
 
+// Create two variable with the names of the months and days in an array
+var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
+var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
+// Create a newDate() object
+var newDate = new Date($('.server_time').val() );
+// Extract the current date from Date object
+
+// Output the day, date, month and year    
+$('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+
+setInterval( function() {
+	// Create a newDate() object and extract the seconds of the current time on the visitor's
+	var seconds = new Date().getSeconds();
+	// Add a leading zero to seconds value
+	$("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
+	},1000);
+	
+setInterval( function() {
+	// Create a newDate() object and extract the minutes of the current time on the visitor's
+	var minutes = new Date().getMinutes();
+	// Add a leading zero to the minutes value
+	$("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
+    },1000);
+	
+setInterval( function() {
+	// Create a newDate() object and extract the hours of the current time on the visitor's
+	var hours = new Date().getHours();
+	// Add a leading zero to the hours value
+	$("#hours").html(( hours < 10 ? "0" : "" ) + hours);
+    }, 1000);
+	
+	
+	
+	
 	}
 
 

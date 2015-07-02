@@ -1,6 +1,6 @@
 
 <?php
-require('../connect.php');
+require('../db.php');
 
 
       $qry="select `id`, `name`, `contactperson`, `address`, `phone`, `email`, `tin` from distributors";

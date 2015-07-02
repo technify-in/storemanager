@@ -1,6 +1,6 @@
 
 <?php
-require('../connect.php');
+require('../db.php');
 
 
       $qry="select `id`, `sku`, `imei`, `sno`, `pid`, `name`, `tax`, `dp`, `mrp`, `vat_bill_id`, `stock_type` FROM `products` where `sold` != '1' ";

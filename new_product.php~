@@ -100,10 +100,6 @@ $(function() {
 		source: "search/name.php",
 		minLength: 1
 	});
-  $(".sku").autocomplete({
-		source: "search/sku_new_product.php",
-		minLength: 1
-	});
 
  
 
@@ -200,7 +196,9 @@ xx=$('<div>',{
 
 
 $(".name").focusout(
+
             function(){
+
               var xmlhttp;
             if (window.XMLHttpRequest)
               {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -215,53 +213,34 @@ $(".name").focusout(
               if (xmlhttp.readyState==4 && xmlhttp.status==200)
                 {
                   var res=JSON.parse(xmlhttp.responseText);
+		
 			if((res[0][0] !="") && ( res[0][0] != null) ){
 		        $(".sku").val(res[0][0])
 		        $(".sku").prop('readonly', true);
 		        $(".sku").attr('style', "color:lightgrey");
+		        
 		       }
 		       else{
 		       	 $(".sku").prop('readonly', false);
 		        $(".sku").attr('style', "color:black");
+		       
+		       
+		       
+		       
 		       }
 		}
               }
             xmlhttp.open("POST","search/sku.php?term="+$(".name").val(),true);
             xmlhttp.send();
+
+
             }
+
+
+
           );
           
-    $(".sku").focusout(
-            function(){
-              var xmlhttp;
-            if (window.XMLHttpRequest)
-              {// code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp=new XMLHttpRequest();
-              }
-            else
-              {// code for IE6, IE5
-              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-              }
-            xmlhttp.onreadystatechange=function()
-              {
-              if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                { 
-                  var res=JSON.parse(xmlhttp.responseText);
-			if((res[0][0] !="") && ( res[0][0] != null) ){
-		        $(".name").val(res[0][0])
-		        $(".name").prop('readonly', true);
-		        $(".name").attr('style', "color:lightgrey");
-		       }
-		       else{
-		       	 $(".name").prop('readonly', false);
-		        $(".name").attr('style', "color:black");
-		       }
-		}
-              }
-            xmlhttp.open("POST","search/name_comp.php?term="+$(".SKU").val(),true);
-            xmlhttp.send();
-            }
-          );
+          
           
 
 });
