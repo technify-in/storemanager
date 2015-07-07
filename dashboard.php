@@ -9,10 +9,10 @@ if (isset($_SESSION['username'])){
     echo "<p style=\"float:right;display:block;width:100%;height:30px;text-align:right\">".$_REQUEST['msg']." " . $username . " ";
   }
   else{
-  echo "<p style=\"float:right;display:block;width:100%;height:30px;text-align:right\">Hi " . $username . "";
-  echo "This is the Members Area";
+  echo "<p style=\"float:right;display:block;width:100%;height:30px;text-align:right\">Hi " . $username . ".";
+  echo " Welcome to the Dashboard ";
   }
-echo "<a href='logout.php'>Logout</a></p>";
+echo "<a href='logout.php'>&#x1f6aa</a></p>";
     }
   else{
 
@@ -55,7 +55,7 @@ ul li { display:inline; text-align:center; }
 
 
 
-<title></title>
+<title>Store Manager</title>
 </head>
 <body>
 <center>
@@ -92,20 +92,24 @@ ul li { display:inline; text-align:center; }
 	<div class="tab"><input type="radio" id="tab-2" name="tab-group-1">
 	<label class="dummy" for="tab-2">Distributors</label>
 	<div class="content">
-		
+
 			<div class="add_pro2">
 			 <a class="list-group-item2" href="new_dist.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Add distributor</a>
 			</div>
 			<div id="data-table-outer2" class="jsontotable">
 			<div id="data-table2" class="jsontotable"></div>
-						</div>	
-		
-		
+						</div>
+
+
 	</div>
 	</div>
 	<div class="tab"><input type="radio" id="tab-3" name="tab-group-1">
 	<label class="dummy" for="tab-3">Sales</label>
 	<div class="content"> <a class="list-group-item2" href="new_sale.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Sell a Product</a></div>
+	</div>
+  <div class="tab"><input type="radio" id="tab-4" name="tab-group-1">
+	<label class="dummy" for="tab-4">Services/Parts</label>
+	<div class="content"> <a class="list-group-item2" href="add_service_parts.php"><i class="fa fa-plus fa-fw"></i>&nbsp; Service a Product</a></div>
 	</div>
 	</div>
 </div>
@@ -115,7 +119,7 @@ ul li { display:inline; text-align:center; }
 
 $(function(){
 
-        
+
               var xmlhttp;
               var res;
             if (window.XMLHttpRequest)
@@ -137,7 +141,7 @@ $(function(){
                 $('#data-table').width($('table').width())
                 $($('#data-table').children()[0]).addClass("searchbar");
                 $($('#data-table').children()[0]).append($(".add_pro"))
-                
+
                 }
               }
 
@@ -145,10 +149,10 @@ $(function(){
             xmlhttp.open("POST","fetch/products.php" ,true);
             xmlhttp.send();
 
-         
+
 
 	// for distributor------------------------------------
-	
+
 	      var xmlhttp2;
               var res2;
             if (window.XMLHttpRequest)
@@ -166,13 +170,13 @@ $(function(){
                   var res2 = JSON.parse(xmlhttp2.responseText);
                   var input2 = JSON.stringify(res2);
                   $.jsontotable(input2, { id: "#data-table2", header: true });
-             
+
                  $($('table')[1]).sieve();
                 $('#data-table2').width($($('table')[1]).width());
                 $($('#data-table2').children()[0]).addClass("searchbar");
                 $($('#data-table2').children()[0]).append($(".add_pro2"))
-              
-             
+
+
                 }
               }
 
@@ -180,17 +184,17 @@ $(function(){
             xmlhttp2.open("POST","fetch/distributors.php" ,true);
             xmlhttp2.send();
 
-            
+
 
 // Create two variable with the names of the months and days in an array
-var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
+var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
 // Create a newDate() object
 var newDate = new Date($('.server_time').val() );
 // Extract the current date from Date object
 
-// Output the day, date, month and year    
+// Output the day, date, month and year
 $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
 
 setInterval( function() {
@@ -199,31 +203,31 @@ setInterval( function() {
 	// Add a leading zero to seconds value
 	$("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
 	},1000);
-	
+
 setInterval( function() {
 	// Create a newDate() object and extract the minutes of the current time on the visitor's
 	var minutes = new Date().getMinutes();
 	// Add a leading zero to the minutes value
 	$("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
     },1000);
-	
+
 setInterval( function() {
 	// Create a newDate() object and extract the hours of the current time on the visitor's
 	var hours = new Date().getHours();
 	// Add a leading zero to the hours value
 	$("#hours").html(( hours < 10 ? "0" : "" ) + hours);
     }, 1000);
-	
-	
-	
-	
+
+
+
+
 	}
 
 
 
           );
 
-         
+
 </script>
 </body>
 </html>
