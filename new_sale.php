@@ -1,7 +1,8 @@
 
 <?php
-session_start();
-date_default_timezone_set('Asia/Kolkata');
+require 'parts/setup.php';
+require 'session.php';
+
 
 //3.1.4 if the user is logged in Greets the user with message
 if (isset($_SESSION['username'])){
@@ -32,11 +33,11 @@ echo "<a href='logout.php'>Logout</a></p>";
 
         <div class="small_box">
         <u><h3 style="font-weight:normal">Customer details</h3></u> <br/>
-        
+
               <div class="lft" > contact</div>
             <div class="rgt"><input name="contact" type='text' class="contact" required></div><br>
 
-            <div class="lft" >Name</div>          
+            <div class="lft" >Name</div>
             <div class="rgt"><input name="name" type='text' class="name" required></div><br>
 
               <div class="lft">Email</div>
@@ -44,46 +45,46 @@ echo "<a href='logout.php'>Logout</a></p>";
 
               <div class="lft">Address</div>
                         <div class="rgt"><input name="address" type='text' class="address" required></div><br>
-          
-          
-        <u><h3 style="font-weight:normal">Product</h3></u><br/>    
-      
-      		
-      		
+
+
+        <u><h3 style="font-weight:normal">Product</h3></u><br/>
+
+
+
       		<div class="product_div" >
             <div class="product_pan" >
               <div class="lft">p_detail</div>
               <div class="rgt"><input name="id[]" type='text' class="id" > <div class="add_it" style="float:right">+</div></div><br>
 		</div>
              </div>
-             
-             
-             
-             
-             
-              <div class="lft">Payment</div>          
-              <div class="rgt"> 
+
+
+
+
+
+              <div class="lft">Payment</div>
+              <div class="rgt">
                           <div class="tabs2">
    <div class="tab new_tab">
        <input type="radio" id="tab-1" name="type" value="cash" checked>
        <label for="tab-1">Cash</label>
-       
+
    </div>
-    
+
    <div class="tab new_tab">
        <input type="radio" id="tab-2" name="type"  value="Bajaj" >
        <label for="tab-2">Bajaj Finance</label>
-       
+
    </div>
-    
+
     <div class="tab new_tab">
        <input type="radio" id="tab-3" name="type"  value="Card" >
        <label for="tab-3">Card</label>
-   
+
    </div>
-    
+
 </div>
-     
+
               </div><br>
             </div>
 
@@ -125,7 +126,7 @@ $($('.id')[0]).val("");
 });
 
 
- 
+
 
 $(".contact").focusout(
 
@@ -138,35 +139,35 @@ $(".contact").focusout(
             xmlhttp.onreadystatechange=function()            {
               if (xmlhttp.readyState==4 && xmlhttp.status==200)              {
                   var res=JSON.parse(xmlhttp.responseText);
-		
+
 			if(    (res[0]['name'] != null)  &&  (res[0]['name'] != "")  ){
-			
+
 			 $(".name").val(res[0]['name'])
 		        $(".name").prop('readonly', true);
 		        $(".name").attr('style', "color:lightgrey");		  }
-		  else{		  
+		  else{
 		      $(".name").prop('readonly', false);
 		        $(".name").attr('style', "color:black");}
-		         if(    (res[0]['email'] != null)  &&  (res[0]['email'] != "")  ){	
+		         if(    (res[0]['email'] != null)  &&  (res[0]['email'] != "")  ){
 		        $(".email").val(res[0]['email'])
 		        $(".email").prop('readonly', true);
 		        $(".email").attr('style', "color:lightgrey");        }
 
-		  else{  
+		  else{
 		      $(".email").prop('readonly', false);
-		        $(".email").attr('style', "color:black");    }  
+		        $(".email").attr('style', "color:black");    }
 		       if(    (res[0]['address'] != null)  &&  (res[0]['address'] != "")  ){
 		        $(".address").val(res[0]['address'])
 		        $(".address").prop('readonly', true);
 		        $(".address").attr('style', "color:lightgrey");     }
 		  else{
 		      $(".address").prop('readonly', false);
-		        $(".address").attr('style', "color:black");}    
+		        $(".address").attr('style', "color:black");}
 		     //  }
 		      /// else{
 		       //	 $(".sku").prop('readonly', false);
 		      //  $(".sku").attr('style', "color:black");
-		       
+
 		       //}
 		}
               }
@@ -175,9 +176,9 @@ $(".contact").focusout(
     }
 
           );
-          
-          
-          
+
+
+
 
 });
 
