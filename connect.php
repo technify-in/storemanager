@@ -1,10 +1,5 @@
 <?php
-define('DB_SERVER', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'store3');
-
-$connection = mysql_connect(DB_SERVER, DB_USER, DB_PASSWORD);
+$connection = mysql_connect('localhost', 'root', '');
 
 if (!$connection){
 die("Database Connection Failed" . mysql_error());
