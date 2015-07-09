@@ -1,7 +1,7 @@
 
-<?php
-require('../db.php');
+<?php require '../parts/db.php' ?>
 
+<?php
 
       $qry="select `id`, `name`, `contactperson`, `address`, `phone`, `email`, `tin` from distributors";
 
@@ -20,5 +20,3 @@ echo json_encode($jsonData)
 
 
 ?>
-
-

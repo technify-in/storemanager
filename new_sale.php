@@ -1,33 +1,16 @@
 
-<?php
-require 'parts/setup.php';
-require 'session.php';
+<?php require 'setup.php' ?>
+<?php require 'session.php' ?>
+<?php require 'secure.php' ?>
+<?php require 'db.php' ?>
+<?php require 'dash_head.php'; ?>
+
+<?php require 'header.php' ?>
 
 
-//3.1.4 if the user is logged in Greets the user with message
-if (isset($_SESSION['username'])){
-  $username = $_SESSION['username'];
-  if(isset($_REQUEST['msg'])){
-    echo "<p style=\"float:right;display:block;width:100%;height:30px;text-align:right\">".$_REQUEST['msg']." " . $username . " ";
-  }
-  else{
-  echo "<p style=\"float:right;display:block;width:100%;height:30px;text-align:right\">Hi " . $username . " ";
-  echo " ";
-  }
-echo "<a href='logout.php'>Logout</a></p>";
-    }
-  else{
-
-    header('Location: index.php?msg=invalid login');
-    }
-?>
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
 
 
 <div class="main_box">
-<a class="list-group-item" href="dashboard.php"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
       <form action="confirm_sale.php" method="GET">
         <center><h2>Sales</h2></center>
 
@@ -93,95 +76,4 @@ echo "<a href='logout.php'>Logout</a></p>";
 </div>
 
 
-<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery-ui.js"></script>
-<script type="text/javascript">
-$(function() {
-
-	//autocomplete
-  $(".contact").autocomplete({
-		source: "search/contact.php",
-		minLength: 1
-	});
- $(".id").autocomplete({
-		source: "search/p_details.php",
-		minLength: 1
-	});
-
-function xyz(){
-$('.rem_it').click(function(){
-
-$(this).parent().parent().remove();
-
-});
-}
-
-
-$(".add_it").click(function(){
-
-$('.product_div').append(' <div class="product_pan" ><div class="lft">p_detail</div><div class="rgt"><input name="id[]" value="'+ $($('.id')[0]).val() +'" type=\'text\' class="id" > <div class="rem_it" style="float:right">-</div></div><br></div>');
-xyz();
-$($('.id')[0]).val("");
-});
-
-
-
-
-$(".contact").focusout(
-
-            function(){
-              var xmlhttp;
-            if (window.XMLHttpRequest)            {// code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp=new XMLHttpRequest();              }
-            else             {// code for IE6, IE5
-              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");              }
-            xmlhttp.onreadystatechange=function()            {
-              if (xmlhttp.readyState==4 && xmlhttp.status==200)              {
-                  var res=JSON.parse(xmlhttp.responseText);
-
-			if(    (res[0]['name'] != null)  &&  (res[0]['name'] != "")  ){
-
-			 $(".name").val(res[0]['name'])
-		        $(".name").prop('readonly', true);
-		        $(".name").attr('style', "color:lightgrey");		  }
-		  else{
-		      $(".name").prop('readonly', false);
-		        $(".name").attr('style', "color:black");}
-		         if(    (res[0]['email'] != null)  &&  (res[0]['email'] != "")  ){
-		        $(".email").val(res[0]['email'])
-		        $(".email").prop('readonly', true);
-		        $(".email").attr('style', "color:lightgrey");        }
-
-		  else{
-		      $(".email").prop('readonly', false);
-		        $(".email").attr('style', "color:black");    }
-		       if(    (res[0]['address'] != null)  &&  (res[0]['address'] != "")  ){
-		        $(".address").val(res[0]['address'])
-		        $(".address").prop('readonly', true);
-		        $(".address").attr('style', "color:lightgrey");     }
-		  else{
-		      $(".address").prop('readonly', false);
-		        $(".address").attr('style', "color:black");}
-		     //  }
-		      /// else{
-		       //	 $(".sku").prop('readonly', false);
-		      //  $(".sku").attr('style', "color:black");
-
-		       //}
-		}
-              }
-            xmlhttp.open("POST","fetch/user_details.php?term="+$(".contact").val(),true);
-            xmlhttp.send();
-    }
-
-          );
-
-
-
-
-});
-
-
-
-</script>
+<?php require 'sale_js.php'?>

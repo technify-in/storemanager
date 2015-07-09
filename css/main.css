@@ -59,10 +59,10 @@ float:right;
 
 
 
-	
-	
-	
-	
+
+
+
+
 .main_box{
   width:600px;
   padding: 30px;
@@ -122,7 +122,7 @@ button{
   padding:3px;
   font-size:15px;
   padding:7px;
-  
+
   color:black;
   background:white;
 	margin-bottom:10px;
@@ -148,13 +148,13 @@ input[type="password"]:focus {
 
 /* tabs.....................................................................................................*/
    .tabs {
-      position: relative;   
+      position: relative;
       height: 100%;\ /* This part sucks */
       clear: both;
       margin: 25px 0;
     }
 .tabs2 {
-  position: relative;   
+  position: relative;
   height:0px; /* This part sucks */
   margin:0px;
 }
@@ -169,30 +169,30 @@ input[type="password"]:focus {
 }
 
 .dummy label {
-      background: #eee; 
-      padding: 10px; 
-      border: 1px solid #ccc; 
-      margin-left: -1px; 
+      background: #eee;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-left: -1px;
       position: relative;
-      left: 1px; 
+      left: 1px;
     }
 .dummy{
       font-size:19px;
 }
 .tab label {
-  padding: 10px; 
-  margin-left: -1px; 
+  padding: 10px;
+  margin-left: -1px;
   position: relative;
-  left: 1px; 
+  left: 1px;
 }
 
 
 
     .tab [type=radio] {
-      display: none;   
+      display: none;
     }
 .tab [type=radio] {
-  display: none;   
+  display: none;
 }
 
     .content {
@@ -203,10 +203,10 @@ input[type="password"]:focus {
       right: 0;
       bottom: 0;
       padding: 20px;
-      border-top: 1px solid #ccc; 
+      border-top: 1px solid #ccc;
       height:100%;
       overflow:scroll;
-      
+
     }
 
 
@@ -219,7 +219,7 @@ input[type="password"]:focus {
   background: white;
  z-index:0;
    border-bottom: 1px solid #ccc;
-    
+
 }
 
 [type=radio]:checked ~ label ~ .content {
@@ -227,7 +227,7 @@ input[type="password"]:focus {
     }
 .new_tab [type=radio]:checked ~ label ~ .content {
       z-index: 0;
-  
+
 }
 
 
@@ -243,7 +243,7 @@ input[type="password"]:focus {
 /*---------------------------------------------------------------------------*/
 
 .ui-autocomplete{
-max-width:300px !important; 
+max-width:300px !important;
 border: 1px solid lightgrey !important;
 list-style:none !important;
 padding:10px
@@ -274,7 +274,7 @@ code {
 }
 
 .jsontotable{
- 
+
 }
 
 .jsontotable table{
@@ -317,7 +317,6 @@ margin-left:10px;
 
 
 
-/* menu dropdown :p/ */
 *,
 *:after,
 *:before {
@@ -333,6 +332,71 @@ margin-left:10px;
 margin:90px;
 }
 
-    Status API Training Shop Blog About Help 
+ul#mainMenu li{
+
+display: block;
+float: right;
+padding:8px;
+border-left: 1px solid white;
+border-right: 1px solid white;
+cursor: pointer;
+}
+
+ul#mainMenu > li:hover{
+
+background: #eee;
+}
+
+.container{
+  width:100%;
+  display:block;
+}
 
 
+
+
+li ul{
+  position: absolute;
+  right:0px;
+  display: none;
+  background: #eee;
+  float: right;
+
+  margin:8px 10px;
+  width:150px;
+  padding:10;
+    padding-left: 30px;
+}
+
+
+li:hover ul{
+  display: block;;
+  text-align: right;
+}
+
+ul#mainMenu {
+  text-align: right;
+  margin:10px;
+  height: 40px
+}
+
+
+ul#mainMenu > li > ul > li{
+
+  background:white;
+  margin:10px;
+  width:100%;
+}
+
+.clearfix{
+  clear:both;
+}
+
+.logo{
+
+  float:left;
+  padding: 10px;
+  font-size: 20px;
+  margin-left: 50px;
+  cursor: pointer;
+}

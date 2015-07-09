@@ -1,5 +1,6 @@
 <?php
 if($logged==1){
+  $username = $_SESSION['username'];
 
 }
 else {
