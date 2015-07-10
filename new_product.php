@@ -3,14 +3,11 @@
 <?php require 'session.php' ?>
 <?php require 'secure.php' ?>
 <?php require 'db.php' ?>
-<?php require 'dash_head.php'; ?>
+<?php require 'new_head.php'; ?>
 
 <?php require 'header.php' ?>
 
 
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
 
 <div class="main_box">
       <form action="add_product.php" method="GET">
@@ -21,18 +18,18 @@
             <div class="rgt"><input name="name" type='text' class="name" required></div><br>
           <div id="sku">
             <div class="lft" >sku</div>
-            <div class="rgt"><input name="sku" type='text' class="sku" required> <div class="add_css"> + </div></div> <br>
+            <div class="rgt"><input name="sku" type='text' class="sku" required> <div class="add_css add_sku"> + </div></div> <br>
           </div>
 
           <div id="imei">
 
               <div class="lft">imei</div>
-              <div class="rgt" > <input name="imei" type='text' class="imei" ><div class="add_imei"> + </div></div><br>
+              <div class="rgt" > <input name="imei" type='text' class="imei" ><div class="add_imei add_css"> + </div></div><br>
 </div>
    <div id="sno">
 
               <div class="lft">s no</div>
-              <div class="rgt"><input name="sno" type='text' class="sno" required><div class="add_sno"> + </div></div><br>
+              <div class="rgt"><input name="sno" type='text' class="sno" required><div class="add_sno add_css"> + </div></div><br>
    </div>
               <div class="lft">bp</div>
               <div class="rgt"><input name="dp" type='text' class="dp" required></div><br>

@@ -1,7 +1,6 @@
 <?php
 
-require('../db.php');
-
+require('../parts/db.php');
 
 if (isset($_GET['term'])){
 	$return_arr = array();

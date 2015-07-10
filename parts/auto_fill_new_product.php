@@ -33,7 +33,7 @@ $(function() {
         	});
 
 
-$('.add_css ').click( function(){
+$('.add_sku ').click( function(){
 	w=$('<input/>',{ type:"text",
 			class:"sku",
 			value:$($('.sku')[0]).val()	});
@@ -41,58 +41,79 @@ $('.add_css ').click( function(){
 	class:"rgt"});
 	x.append(w);
 xx=$('<div>',{
-	class:"add_css sub_css"})
-	.html(" ");
+	class:"add_sku sub_css"})
+	.html(" - ");
 	x.append(xx);
 	y=$('<div>',{
 	class:"lft"})
 	.html("sku");
 	w.val($($('.sku')[0]).val());
-	$('#sku').append(y);
-	$('#sku').append(x);
-	$('#sku').append("<br/>");});
+  r=$('<div>');
+  r.append(y);
+  r.append(x);
+    r.append("<br/>");
+  $('#sku').append(r);
+    $('.sub_css').click(function() {
+      $(this).parent().parent().remove()
+    });
+  });
 
 
 
-$('.add_imei').click( function(){
-	w=$('<input/>',{ type:"text",
-			class:"imei",
-			value:$($('.imei')[0]).val()	});
-	x=$('<div>',{
-	class:"rgt"});
-	x.append(w);
-xx=$('<div>',{
-	class:"add_imei sub_css"})
-	.html(" ");
-	x.append(xx);
-	y=$('<div>',{
-	class:"lft"})
-	.html("imei");
-	w.val($($('.imei')[0]).val());
-	$('#imei').append(y);
-	$('#imei').append(x);
-	$('#imei').append("<br/>");});
+
+  $('.add_imei ').click( function(){
+  	w=$('<input/>',{ type:"text",
+  			class:"imei",
+  			value:$($('.imei')[0]).val()	});
+  	x=$('<div>',{
+  	class:"rgt"});
+  	x.append(w);
+  xx=$('<div>',{
+  	class:"add_imei sub_css"})
+  	.html(" - ");
+  	x.append(xx);
+  	y=$('<div>',{
+  	class:"lft"})
+  	.html("imei");
+  	w.val($($('.imei')[0]).val());
+    r=$('<div>');
+    r.append(y);
+    r.append(x);
+      r.append("<br/>");
+    $('#imei').append(r);
+      $('.sub_css').click(function() {
+        $(this).parent().parent().remove()
+      });
+    });
 
 
 
-$('.add_sno ').click( function(){
-	w=$('<input/>',{ type:"text",
-			class:"sno",
-			value:$($('.sno')[0]).val()	});
-	x=$('<div>',{
-	class:"rgt"});
-	x.append(w);
-xx=$('<div>',{
-	class:"add_sno sub_css"})
-	.html(" ");
-	x.append(xx);
-	y=$('<div>',{
-	class:"lft"})
-	.html("sno");
-	w.val($($('.sno')[0]).val());
-	$('#sno').append(y);
-	$('#sno').append(x);
-	$('#sno').append("<br/>");});
+
+
+    $('.add_sno ').click( function(){
+    	w=$('<input/>',{ type:"text",
+    			class:"sno",
+    			value:$($('.sno')[0]).val()	});
+    	x=$('<div>',{
+    	class:"rgt"});
+    	x.append(w);
+    xx=$('<div>',{
+    	class:"add_sno sub_css"})
+    	.html(" - ");
+    	x.append(xx);
+    	y=$('<div>',{
+    	class:"lft"})
+    	.html("sno");
+    	w.val($($('.sno')[0]).val());
+      r=$('<div>');
+      r.append(y);
+      r.append(x);
+        r.append("<br/>");
+      $('#sno').append(r);
+        $('.sub_css').click(function() {
+          $(this).parent().parent().remove()
+        });
+      });
 
 
 
