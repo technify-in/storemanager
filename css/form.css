@@ -1,0 +1,65 @@
+.store_form{
+
+
+}
+.store_form div{
+display: inline-block;
+float: left;
+width:400px;
+}
+
+.store_form p{
+  display:inline-block;
+  width:150px;
+  text-align: left;
+}
+
+.store_form div input{
+
+  display:inline-block;
+
+
+}
+
+.store_form div input:focus{
+
+  padding: 5px;
+  border: 1px solid grey;
+  box-shadow: none;
+
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-color: lightgrey;
+  outline-style: none;
+  outline-width: 5px;
+
+
+}
+
+form{
+
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 4px black;
+  text-align: center;
+}
+
+
+
+.store_form input[type='submit']{
+  border: 1px solid lightgrey;
+  background: none;
+  padding: 10px;
+  color: grey;
+  font-size: 20px;
+}
+
+.store_form input[type='submit']:hover{
+  padding: 15px;
+  margin: -5px;
+
+}
+
+
+
+h3,p{
+  color: grey;
+}
