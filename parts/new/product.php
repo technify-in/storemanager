@@ -70,3 +70,48 @@ Add Product
 
 
   </div>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <script type="text/javascript">
+  $(function(){
+
+    $(".name").autocomplete({
+      source: "search/name.php",
+      minLength: 1
+    });
+
+    $(".sku").autocomplete({
+      source: "search/sku.php",
+      minLength: 1
+    });
+
+    $(".sno").autocomplete({
+      source: "search/sno.php",
+      minLength: 1
+    });
+
+    $(".dp").autocomplete({
+        source: "search/dp.php",
+        minLength: 1
+      });
+
+    $(".vat").autocomplete({
+          source: "search/vat.php",
+          minLength: 1
+        });
+    $(".mrp").autocomplete({
+            source: "search/mrp.php",
+            minLength: 1
+          });
+
+    $(".imei").autocomplete({
+              source: "search/imei.php",
+              minLength: 1
+            });
+
+  });
+
+
+</script>

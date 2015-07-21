@@ -1,76 +1,59 @@
 <?php
 class Db {
-    // The database connection
-    protected static $connection;
-
-    /**
-     * Connect to the database
-     *
-     * @return bool false on failure / mysqli MySQLi object instance on success
-     */
+    public static $connection;
+    public $configfile="/home/j/Sites/sites/storeconfig.ini";
+    public $x=0;
     public function connect() {
-        // Try and connect to the database
         if(!isset(self::$connection)) {
-            // Load configuration as an array. Use the actual location of your configuration file
-            $config = parse_ini_file('../../storeconfig.ini');
+            $config = parse_ini_file($this->configfile);
             self::$connection = new mysqli('localhost',$config['username'],$config['password'],$config['dbname']);
         }
 
-        // If connection was not successful, handle the error
         if(self::$connection === false) {
-          print 'connection error';  // Handle error - notify administrator, log to a file, show an error screen, etc.
+          print 'connection error';
             return false;
         }
         return self::$connection;
     }
 
-    /**
-     * Query the database
-     *
-     * @param $query The query string
-     * @return mixed The result of the mysqli::query() function
-     */
-    public function query($query) {
-        // Connect to the database
-        $connection = $this -> connect();
-        // Query the database
-        $result = $connection -> query($query);
 
+    public function query($query) {
+        $connection = $this -> connect();
+        $result = $connection -> query($query);
         return $result;
     }
 
-    /**
-     * Fetch rows from the database (SELECT query)
-     *
-     * @param $query The query string
-     * @return bool False on failure / array Database rows on success
-     */
     public function select($n,$query) {
 
       $count=0;
       $rows = array();
       $result = $this -> query($query);
-
-      if($n ==0 )
+      if($n==0)
       {
         if($result === false) {
             return false;
         }
         $count=$result -> num_rows;
       }
-      elseif($n==1)
+
+      if($n==1)
       {
+
         if($result === false) {
             return false;
         }
+
       $rows[] = $result -> fetch_assoc();
       $count=$result -> num_rows;
       }
-      elseif($n>1)
+
+
+      if($n>1)
       {
         if($result === false) {
             return false;
         }
+
         while ($row = $result -> fetch_assoc()) {
             $rows[] = $row;
         }
@@ -80,15 +63,19 @@ class Db {
         return array($count,$rows);
     }
 
-     /**
-     * Fetch the last error from the database
-     *
-     * @return string Database error message
-     */
-    public function error() {
-        $connection = $this -> connect();
-        return $connection -> error;
-    }
+     public function error() {
+         $connection = $this -> connect();
+         return $connection -> error;
+     }
+     public function serror() {
+         $connection = $this -> connect();
+         if(!$connection){
+           return 0;
+         }
+         else{
+           return 1;
+         }
+     }
 
     /**
      * Quote and escape value for use in a database query
@@ -100,5 +87,9 @@ class Db {
         $connection = $this -> connect();
         return "'" . $connection -> real_escape_string($value) . "'";
     }
+
+
+
+
 }
 ?>
