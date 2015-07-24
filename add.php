@@ -1,5 +1,6 @@
 <?php require 'setup.php' ?>
 <?php require 'session.php' ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -87,6 +88,33 @@
 						source: "search/imei.php",
 						minLength: 1
 					});
+
+
+
+
+
+
+	// implement the change functions
+
+	$('.qty').change(function(){
+		if($(this).val()>1){
+			$('.imei').prop("disabled",true);
+		}
+		else{
+			$('.imei').prop("disabled",false);
+		}
+	});
+
+	$('.imei').change(function(){
+		if($(this).val()==""){
+			$('.qty').prop("disabled",false);
+		}
+		else{
+			$('.qty').prop("disabled",true);
+		}
+	});
+
+
 
 
 

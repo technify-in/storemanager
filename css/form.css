@@ -2,7 +2,7 @@
 
 
 }
-.store_form div{
+.store_form > div{
 display: inline-block;
 float: left;
 width:400px;
@@ -15,7 +15,7 @@ width:400px;
 }
 
 .store_form div input{
-
+color:grey;
   display:inline-block;
 
 

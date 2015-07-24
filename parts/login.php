@@ -10,11 +10,14 @@
        $db = new Db();
        $username = $db -> quote($_POST['username']);
        $password = $db -> quote( md5($_POST['password']) );
-       $res = $db -> select(0,"SELECT * FROM `employee` where `username` = $username and `password` = $password ");
+       $res = $db -> select(1,"SELECT * FROM `employee` where `username` = $username and `password` = $password ");
        //print $db->error();
        if ($res[0] == 1){
-         print "done";
-       $_SESSION['username'] = $_POST['password'];
+      //   print "done";
+      $_SESSION['username'] = $_POST['password'];
+      $_SESSION['uid'] = $res['1'][0]['eid'];
+      print_r($res['1']);
+
       header('Location: ../dashboard');
        }
       else{

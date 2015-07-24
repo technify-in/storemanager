@@ -15,6 +15,8 @@
 	<body class="bk_spike" >
 
 		<?php require 'loader.php' ?>
+		<?php require 'message.php' ?>
+
 			<div class="page ">
 
 					<section id="head">

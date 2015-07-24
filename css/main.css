@@ -927,3 +927,110 @@ hr.no_color{
   border-bottom: none;
   width: 75%;
 }
+
+
+.message{
+  width:270px;
+  /*height:80px;*/
+  position: fixed;
+  top:50px;
+  right:50px;
+  z-index: 1000;
+
+}
+
+.message > div{
+  border-radius: 5px;
+  box-shadow:3px;
+  cursor: pointer;
+}
+
+.notice{
+  background: rgba(46, 204, 113, 0.7);
+
+}
+
+.error{
+  background:rgba(192, 57, 43,0.7);
+
+}
+.warning{
+  background: rgba(243, 156, 18, 0.2);
+
+}
+
+.error .title p{
+  color:rgba(255, 255, 255, 0.7);
+  padding:10px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  display: block;
+  margin: 0px
+}
+.notice .title p{
+  color:rgba(255, 255, 255, 0.7);
+  padding:10px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  display: block;
+  margin: 0px
+}
+.warning .title p{
+  color:rgba(255, 255, 255, 0.7);
+  padding:10px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  display: block;
+  margin: 0px
+}
+
+.text p{
+  color:rgba(255, 255, 255, 0.7);
+  padding:10px;
+  padding-top: 5px;
+  /*font-size: 20px;*/
+    display: block;
+    margin: 0px;
+}
+
+
+.tabs-input {
+  /*position: relative;*/
+  min-height: 200px; /* This part sucks */
+  /*clear: both;*/
+  /*margin: 10px 0;*/
+  display: inline;
+
+}
+
+
+
+.tab-input {
+display: inline-block;
+}
+.tab-input label {
+  /*background: #eee;*/
+  padding: 10px;
+  border: 1px solid transparent;
+  margin-left: -1px;
+  /*position: relative;*/
+  /*left: 1px;*/
+  color:grey;
+}
+.tab-input [type=radio] {
+  display: none;
+}
+
+.content {
+display :none;
+}
+
+
+[type=radio]:checked ~ label {
+
+  border-bottom: 1px solid grey;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+}

@@ -21,6 +21,9 @@ switch ($e) {
 	case 'dbe':
 		echo "<b>mysql connection error</b><br />connection error occured error code:$_SESSION[code] <br />contact administrator";
 		break;
+	case 'inp':
+		echo "<b>erro Inserting Product</b><br />".$_SESSION['mess']." <br />contact administrator";
+		break;
   case 1:
 		//header("Location:index.php");
 		die(0);

@@ -7,7 +7,7 @@ Add Product
 
 
 
-    <form class="product_form store_form pd_20" action="add.php" method="GET">
+    <form class="product_form store_form pd_20" action="/parts/add_part.php" method="GET">
       <h3 class="pd_30">PRODUCT INFO</h3>
 
       <div class="" ><p>  product name  </p>
@@ -46,6 +46,27 @@ Add Product
       <input type='text' value="<?php print$username;?>" disabled>
       </div>
 
+<div class=""><p>Stock Type</p>
+        <div class="tabs-input">
+
+   <div class="tab-input">
+       <input type="radio" id="tab-1" name="stock_type" value="A" checked>
+       <label for="tab-1">A</label>
+   </div>
+
+   <div class="tab-input">
+       <input type="radio" id="tab-2" name="stock_type"  value="B" >
+       <label for="tab-2">B</label>
+   </div>
+
+    <div class="tab-input">
+       <input type="radio" id="tab-3" name="stock_type"  value="C">
+       <label for="tab-3">C</label>
+     </div>
+
+</div>
+    </div>
+
       <hr class="trans clear">
     <h3 class="pd_30">VAT INVOICE</h3>
 
@@ -63,55 +84,10 @@ Add Product
 
 
 <hr class="ma_30 clear">
-    <input type="submit">
+    <input name="submit" value="product" type="submit">
 <hr class="ma_30 clear no_color">
 
     </form>
 
 
   </div>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-  <script type="text/javascript">
-  $(function(){
-
-    $(".name").autocomplete({
-      source: "search/name.php",
-      minLength: 1
-    });
-
-    $(".sku").autocomplete({
-      source: "search/sku.php",
-      minLength: 1
-    });
-
-    $(".sno").autocomplete({
-      source: "search/sno.php",
-      minLength: 1
-    });
-
-    $(".dp").autocomplete({
-        source: "search/dp.php",
-        minLength: 1
-      });
-
-    $(".vat").autocomplete({
-          source: "search/vat.php",
-          minLength: 1
-        });
-    $(".mrp").autocomplete({
-            source: "search/mrp.php",
-            minLength: 1
-          });
-
-    $(".imei").autocomplete({
-              source: "search/imei.php",
-              minLength: 1
-            });
-
-  });
-
-
-</script>

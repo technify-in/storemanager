@@ -33,7 +33,7 @@ class Db {
         if($result === false) {
             return false;
         }
-        $count=$result -> num_rows;
+        return $result;
       }
 
       if($n==1)
