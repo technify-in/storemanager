@@ -20,7 +20,7 @@ $('.payment').keyup(function(){
 
 });
 
-$('.cash').change(function(){
+$($('.cash')[0]).change(function(){
 
 if($($('.payment')[0]).is(':disabled')){
   $($('.payment')[0]).prop('disabled', false);
@@ -33,7 +33,7 @@ else{
 }
 });
 
-$('.finance').change(function(){
+$($('.finance')[0]).change(function(){
 
 if($($('.payment')[1]).is(':disabled')){
   $($('.payment')[1]).prop('disabled', false);
@@ -48,12 +48,11 @@ else{
 }
 });
 
-$('.card').change(function(){
+$($('.card')[0]).change(function(){
 
 if($($('.payment')[2]).is(':disabled')){
   $($('.payment')[2]).prop('disabled', false);
   $('.card_bill').prop('disabled', false);
-
 
 }
 else{

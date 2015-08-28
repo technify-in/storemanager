@@ -1,3 +1,5 @@
+<?php
+?>
 <div class="heading">
 Sell a Product
 </div>
@@ -6,7 +8,7 @@ Sell a Product
     <div class="add_form">
 
 
-      <form class="product_form pd_20" action="/parts/bill/confirm.php" method="GET">
+      <form class="product_form pd_20" action="/bill.php?confirm" method="GET">
 
         <div class="store_form">
           <h3 class="pd_30">CUSTOMER INFO</h3>

@@ -31,7 +31,7 @@
 					<section class=" trans_30 ">
 
 					<?php
-					(isset($_REQUEST['confirm']))?include 'bill/confirm.php':print'';
+					(isset($_REQUEST['product']))?include 'bill/confirm.php':print'';
 					// (isset($_REQUEST['dealer']))?include 'new/dealer.php':print'';
 					// (isset($_REQUEST['sale']))?include 'new/sale.php':print'';
 					 ?>
@@ -57,7 +57,7 @@
 	$('#preloader').fadeOut(300);
 
 <?php
-(isset($_REQUEST['confirm']))?include 'js/bill_confirm.js.php':print'';
+(isset($_REQUEST['product']))?include 'js/bill_confirm.js.php':print'';
 // (isset($_REQUEST['dealer']))?include 'js/add_dealer.js.php':print'';
 // (isset($_REQUEST['sale']))?include 'js/add_sale.js.php':print'';
 
