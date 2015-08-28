@@ -1,5 +1,4 @@
 <?php require 'setup.php' ?>
-<?php require 'session.php' ?>
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +7,9 @@
 		<title></title>
 		<?php require 'header.php' ?>
 		<?php require 'common_css.php' ?>
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bill.css">
 </head>
 
 	<body class="bk_spike" >
@@ -30,9 +31,9 @@
 					<section class=" trans_30 ">
 
 					<?php
-					(isset($_REQUEST['product']))?include 'new/product.php':print'';
-					(isset($_REQUEST['dealer']))?include 'new/dealer.php':print'';
-					(isset($_REQUEST['sale']))?include 'new/sale.php':print'';
+					(isset($_REQUEST['confirm']))?include 'bill/confirm.php':print'';
+					// (isset($_REQUEST['dealer']))?include 'new/dealer.php':print'';
+					// (isset($_REQUEST['sale']))?include 'new/sale.php':print'';
 					 ?>
 
 					</section>
@@ -56,9 +57,9 @@
 	$('#preloader').fadeOut(300);
 
 <?php
-(isset($_REQUEST['product']))?include 'js/add_product.js.php':print'';
-(isset($_REQUEST['dealer']))?include 'js/add_dealer.js.php':print'';
-(isset($_REQUEST['sale']))?include 'js/add_sale.js.php':print'';
+(isset($_REQUEST['confirm']))?include 'js/bill_confirm.js.php':print'';
+// (isset($_REQUEST['dealer']))?include 'js/add_dealer.js.php':print'';
+// (isset($_REQUEST['sale']))?include 'js/add_sale.js.php':print'';
 
 ?>
 

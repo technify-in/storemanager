@@ -13,8 +13,12 @@
       <p>home</p>
       </li>
       <li>
-      <p>about</>
+      <p>about</p>
       </li>
+      <li>
+      <p><a href="/add/sale">sell</a></p>
+      </li>
+
       <li>
       <p>
 

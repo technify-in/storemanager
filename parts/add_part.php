@@ -24,8 +24,8 @@ if ($_REQUEST['submit']=='product') {
 
 
     $qry_product="INSERT INTO `store3`.`products`".
-    "(`id`, `sku`, `imei`, `sno`, `pid`, `name`, `tax`, `dp`, `mrp`, `vat_bill_id`, `p_condition`, `stock_type`, `sold`, `date` , `sales_person`)".
-    " VALUES (NULL, $sku, $imei, $sno, '', $name, $vat, $dp, $mrp, $tiv, 'pcon', $stock_type, '0', $dat , '$_SESSION[uid]' );";
+    "(`id`, `sku`, `imei`, `sno`, `pid`, `name`, `tax`, `dp`, `mrp`, `vat_bill_id`, `p_condition`, `stock_type`, `sold`, `date` , `sales_person`,`qty`)".
+    " VALUES (NULL, $sku, $imei, $sno, '', $name, $vat, $dp, $mrp, $tiv, 'pcon', $stock_type, '0', $dat , '$_SESSION[uid]',$qty );";
 
 
     $qry_inv = "INSERT INTO `store3`.`taxinvoice`".

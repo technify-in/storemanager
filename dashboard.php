@@ -30,7 +30,7 @@
 
 
 
-					<section class=" trans_30 ">
+					<section class=" trans_30">
 						<div class="heading">
 							Products
 						</div>
@@ -83,6 +83,14 @@
 								        else
 								             $(this).show();
 								    });
+
+				});
+
+
+				$('.notification').click(function(){
+
+					$(this).hide();
+
 
 				});
 

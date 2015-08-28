@@ -6,21 +6,21 @@
       print"Error!";
     }
     elseif (isset($_SESSION['w'])) {
-      print '    <div class="warning">'.
+      print '    <div class=" notification warning">'.
       '      <div class="title">  <p>';
 
       print"Warning!";
 
     }
     elseif (isset($_SESSION['n'])) {
-      print '    <div class="notice">'.
+      print '    <div class="notice  notification ">'.
       '      <div class="title">  <p>';
 
       print"Notice!";
 
     }
     else {
-      print '    <div class="error" style="display:none">'.
+      print '    <div class="error  notification " style="display:none">'.
       '      <div class="title">  <p>';
 
       print"Error!";

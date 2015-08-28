@@ -1,0 +1,52 @@
+tr input{
+  height: 100%;
+  width: 100%;
+}
+
+.price_tr{
+  padding: 0px;
+}
+
+.bill_field{
+  margin: 10px;
+}
+
+.bill_field{
+  margin: 10px;
+}
+
+
+.bill_field label{
+  display: inline-block;
+  font-size: 20px;
+  width: 200px;
+}
+
+input[type=checkbox]{
+  display: none;
+}
+
+input[type=checkbox]:checked ~ label{
+color:grey;
+}
+
+input[type=checkbox] ~ label{
+color:lightgrey;
+}
+
+.payment_detail{
+  display: inline-block;
+}
+
+
+input[type='submit']{
+  font-size: 25px;
+  color: grey;
+  background: white;
+  border: 1px solid lightgrey;
+  padding:10px 15px;
+}
+
+input{
+  color: grey;
+}

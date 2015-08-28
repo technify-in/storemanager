@@ -1,7 +1,7 @@
 
 <?php
 
-      $qry="select `id`, `sku`, `imei`, `sno`, `pid`, `name`, `tax`, `dp`, `mrp`, `vat_bill_id`, `stock_type` FROM `products` where `sold` != '1' ";
+      $qry="select `id`, `sku`, `imei`, `sno`, `qty`, `name`, `tax`, `dp`, `mrp`, `vat_bill_id`, `stock_type` FROM `products` where `sold` != '1' ";
       $db = new Db();
       $res = $db -> select(2,$qry);
 ?>
@@ -14,13 +14,13 @@
 <th> id </th>
 <th> imei </th>
 <th> sno </th>
-<th> pid </th>
+<th> qty </th>
 <th> name </th>
 <th> tax </th>
 <th> dp </th>
 <th> mrp </th>
-<th> vat bill id </th>
-<th> stock type </th>
+<th> vat id </th>
+<th> type </th>
 </tr>
 </thead>
 <tbody>
@@ -30,7 +30,7 @@
         print "<td> $key[id] </td>";
         print "<td> $key[imei] </td>";
         print "<td> $key[sno] </td>";
-        print "<td> $key[pid] </td>";
+        print "<td> $key[qty] </td>";
         print "<td> $key[name] </td>";
         print "<td> $key[tax] </td>";
         print "<td> $key[dp] </td>";
